@@ -1,5 +1,6 @@
 import cv2
 
+
 def on_hue_changed(_=None):
     lower_hue = cv2.getTrackbarPos('Lower Hue', 'mask')
     upper_hue = cv2.getTrackbarPos('Upper Hue', 'mask')
@@ -8,6 +9,7 @@ def on_hue_changed(_=None):
     upperb = (upper_hue, 255, 255)
     mask = cv2.inRange(src_hsv, lowerb, upperb)
     cv2.imshow('mask', mask)
+
 
 def main():
     global src_hsv

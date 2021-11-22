@@ -8,8 +8,8 @@ def hough_lines():
     if src is None:
         print('Image load failed')
         return
-    edge = cv2.Canny(src, 25, 150) # image, lowerbound, upperbound
-    lines = cv2.HoughLines(edge, 1, math.pi/180, 250)
+    edge = cv2.Canny(src, 25, 150)  # image, lowerbound, upperbound
+    lines = cv2.HoughLines(edge, 1, math.pi / 180, 250)
     dst = cv2.cvtColor(edge, cv2.COLOR_GRAY2BGR)
 
     if lines is not None:
@@ -22,11 +22,12 @@ def hough_lines():
             alpha = 1000
             pt1 = (int(x0 - alpha * sin_t), int(y0 + alpha * cos_t))
             pt2 = (int(x0 + alpha * sin_t), int(y0 - alpha * cos_t))
-            cv2.line(dst, pt1, pt2, (0,0,255), 2, cv2.LINE_AA)
+            cv2.line(dst, pt1, pt2, (0, 0, 255), 2, cv2.LINE_AA)
 
     cv2.imshow('src', src)
     cv2.imshow('dst', dst)
     cv2.waitKey()
     cv2.destroyAllWindows()
+
 
 hough_lines()

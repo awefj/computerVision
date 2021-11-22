@@ -1,5 +1,6 @@
 import cv2, numpy
 
+
 def sobel_edge():
     src = cv2.imread('../imgs/lenna.bmp', cv2.IMREAD_GRAYSCALE)
 
@@ -19,5 +20,6 @@ def sobel_edge():
     cv2.imshow('edge', edge)
     cv2.waitKey()
     cv2.destroyAllWindows()
+
 
 sobel_edge()

@@ -8,7 +8,7 @@ if src is None:
     print('Image load failed')
     exit()
 
-emboss = np.array([[-1,-1,0],[-1,0,1],[0,1,1]], np.float32)
+emboss = np.array([[-1, -1, 0], [-1, 0, 1], [0, 1, 1]], np.float32)
 dst = cv2.filter2D(src, -1, emboss, delta=128)
 
 cv2.imshow('src', src)

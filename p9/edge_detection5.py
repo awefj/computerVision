@@ -1,12 +1,13 @@
 import cv2
 
+
 def hough_circles():
     src = cv2.imread('../imgs/1.jpeg', cv2.IMREAD_GRAYSCALE)
     if src is None:
         print('Image load failed')
         return
 
-    blurred = cv2.blur(src, (3,3))
+    blurred = cv2.blur(src, (3, 3))
     circles = cv2.HoughCircles(blurred, cv2.HOUGH_GRADIENT, 1, 50, param1=150, param2=30)
     dst = cv2.cvtColor(src, cv2.COLOR_GRAY2BGR)
 
@@ -19,5 +20,6 @@ def hough_circles():
     cv2.imshow('dst', dst)
     cv2.waitKey()
     cv2.destroyAllWindows()
+
 
 hough_circles()

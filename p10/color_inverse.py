@@ -13,16 +13,17 @@ def color_inverse():
 
     for j in range(src.shape[0]):
         for i in range(src.shape[1]):
-            p1 = src[j,i]
-            p2 = dst[j,i]
+            p1 = src[j, i]
+            p2 = dst[j, i]
 
-            p2[0] = 255-p1[0]
-            p2[1] = 255-p1[1]
-            p2[2] = 255-p1[2]
+            p2[0] = 255 - p1[0]
+            p2[1] = 255 - p1[1]
+            p2[2] = 255 - p1[2]
 
     cv2.imshow('src', src)
     cv2.imshow('dst', dst)
     cv2.waitKey()
     cv2.destroyAllWindows()
+
 
 color_inverse()

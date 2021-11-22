@@ -14,4 +14,5 @@ def color_grayscale():
     cv2.waitKey()
     cv2.destroyAllWindows()
 
+
 color_grayscale()

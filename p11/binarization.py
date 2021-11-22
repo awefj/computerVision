@@ -5,6 +5,7 @@ def on_thres(pos):
     _, dst = cv2.threshold(src, pos, 255, cv2.THRESH_BINARY)
     cv2.imshow('dst', dst)
 
+
 filename = '../imgs/neutrophils.png'
 
 src = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)

@@ -1,5 +1,6 @@
 import cv2, numpy
 
+
 def canny_edge():
     src = cv2.imread('../imgs/lenna.bmp', cv2.IMREAD_GRAYSCALE)
 
@@ -15,5 +16,6 @@ def canny_edge():
     cv2.imshow('dst2', dst2)
     cv2.waitKey()
     cv2.destroyAllWindows()
+
 
 canny_edge()

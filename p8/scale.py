@@ -1,11 +1,13 @@
 import cv2 as cv
+
+
 def affine_scale():
     src = cv.imread('../imgs/tekapo.bmp')
 
     if src is None:
         print('Image load failed')
         return
-    dst1 = cv.resize(src, (0,0), fx=4, fy=4, interpolation=cv.INTER_NEAREST)
+    dst1 = cv.resize(src, (0, 0), fx=4, fy=4, interpolation=cv.INTER_NEAREST)
     dst2 = cv.resize(src, (1920, 1280))
     dst3 = cv.resize(src, (1920, 1280), interpolation=cv.INTER_CUBIC)
     dst4 = cv.resize(src, (1920, 1280), interpolation=cv.INTER_LANCZOS4)
@@ -18,5 +20,6 @@ def affine_scale():
 
     cv.waitKey()
     cv.destroyAllWindows1()
+
 
 affine_scale()

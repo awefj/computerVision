@@ -1,5 +1,7 @@
 import cv2 as cv
 import numpy as np
+
+
 def contrast1():
     src = cv.imread('../imgs/lenna.bmp', cv.IMREAD_GRAYSCALE)
 
@@ -15,6 +17,7 @@ def contrast1():
     cv.waitKey()
     cv.destroyAllWindows()
 
+
 def contrast2():
     src = cv.imread('../imgs/lenna.bmp', cv.IMREAD_GRAYSCALE)
     if src is None:
@@ -22,7 +25,7 @@ def contrast2():
         return
 
     alpha = 1.0
-    dst = cv.convertScaleAbs(src, alpha=1+alpha, beta=-128*alpha)
+    dst = cv.convertScaleAbs(src, alpha=1 + alpha, beta=-128 * alpha)
 
     cv.imshow('src', src)
     cv.imshow('dst', dst)

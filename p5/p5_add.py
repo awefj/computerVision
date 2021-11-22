@@ -1,6 +1,7 @@
 import numpy as np
 import cv2 as cv
 
+
 def brightness1():
     src = cv.imread('../imgs/lenna.bmp', cv.IMREAD_GRAYSCALE)
 
@@ -15,6 +16,7 @@ def brightness1():
     cv.waitKey()
     cv.destroyAllWindows()
 
+
 def brightness2():
     src = cv.imread('../imgs/lenna.bmp', cv.IMREAD_GRAYSCALE)
 
@@ -25,12 +27,13 @@ def brightness2():
     dst = np.empty(src.shape, src.dtype)
     for y in range(src.shape[0]):
         for x in range(src.shape[1]):
-            dst[y,x] = src[y,x] + 100   #overflow
+            dst[y, x] = src[y, x] + 100  # overflow
 
     cv.imshow('src', src)
     cv.imshow('dst', dst)
     cv.waitKey()
     cv.destroyAllWindows()
+
 
 def saturated(value):
     if value > 255:
@@ -38,6 +41,7 @@ def saturated(value):
     elif value < 0:
         value = 0
     return value
+
 
 def brightness3():
     src = cv.imread('../imgs/lenna.bmp', cv.IMREAD_GRAYSCALE)
@@ -49,12 +53,13 @@ def brightness3():
     dst = np.empty(src.shape, src.dtype)
     for y in range(src.shape[0]):
         for x in range(src.shape[1]):
-            dst[y,x] = saturated(src[y,x] + 100)   #overflow
+            dst[y, x] = saturated(src[y, x] + 100)  # overflow
 
     cv.imshow('src', src)
     cv.imshow('dst', dst)
     cv.waitKey()
     cv.destroyAllWindows()
+
 
 def brightness4():
     src = cv.imread('../imgs/lenna.bmp', cv.IMREAD_GRAYSCALE)
@@ -72,6 +77,7 @@ def brightness4():
     update(0)
     cv.waitKey()
     cv.destroyAllWindows()
+
 
 brightness1()
 brightness2()
